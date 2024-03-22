@@ -1,0 +1,72 @@
+<div style="width: 500px; margin: auto;">
+
+  <div *ngIf="currentBook" class="edit-form">
+
+      <h4>BOOK</h4>
+
+      <form>
+
+         <div class="form-group">
+
+              <label for="title">Title</label>
+
+              <input type="text" class="form-control" id="title" [(ngModel)]="currentBook" name="title" />
+
+          </div>
+
+          <div class="form-group">
+
+              <label for="author">Author</label>
+
+              <input type="text" class="form-control" id="author" [(ngModel)]="currentBook"
+
+                  name="author" />
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="published_date">Published Date</label>
+
+            <input type="text" class="form-control" id="published_date" [(ngModel)]="currentBook"
+
+                name="published_date" />
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="isbn">Isbn</label>
+
+          <input type="text" class="form-control" id="isbn" [(ngModel)]="currentBook"
+
+              name="isbn" />
+
+      </div>
+
+    </form>
+
+
+
+
+
+      <button type="submit" class="badge badge-success" (click)="updateBook">
+
+          Update
+
+      </button>
+
+      <p>{{ message }}</p>
+
+  </div>
+
+  <div *ngIf="!currentBook">
+
+      <br />
+
+      <p>This book is not accessible</p>
+
+  </div>
+
+</div>
